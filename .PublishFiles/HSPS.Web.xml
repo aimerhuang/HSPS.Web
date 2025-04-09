@@ -1,0 +1,471 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HSPS.Web.Api</name>
+    </assembly>
+    <members>
+        <member name="T:HSPS.Web.Controllers.BaseApiController">
+            <summary>
+            父类控制器方法
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Controllers.BaseApiController.Success``1(``0,System.String)">
+            <summary>
+            带类型返回成功父类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Controllers.BaseApiController.Success(System.String)">
+            <summary>
+            返回成功状态父类
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Controllers.BaseApiController.Failed(System.String,System.Int32)">
+            <summary>
+            返回失败状态父类
+            </summary>
+            <param name="msg"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Controllers.BaseApiController.Failed``1(System.String,System.Int32)">
+            <summary>
+            带类型返回失败
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="msg"></param>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Controllers.BaseApiController.SuccessPage``1(System.Int32,System.Int32,System.Int32,System.Collections.Generic.List{``0},System.Int32,System.String)">
+            <summary>
+            多数据分页返回成功
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="page">页数</param>
+            <param name="dataCount">数量</param>
+            <param name="pageSize">页数</param>
+            <param name="data">数据</param>
+            <param name="pageCount"></param>
+            <param name="msg">状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Controllers.BaseApiController.SuccessPage``1(HSPS.Web.Model.PageModel{``0},System.String)">
+            <summary>
+            单类型分页返回成功
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="pageModel"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HSPS.Web.Api.Controllers.LoginController">
+            <summary>
+            登录管理【无权限】
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.LoginController.#ctor(HSPS.Web.IServices.IUserServices,HSPS.Web.IServices.IPermissionServices,HSPS.Web.AuthHelper.PermissionRequirement,AutoMapper.IMapper)">
+            <summary>
+            构造函数注入
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.LoginController.GetJwtStr(System.String,System.String)">
+            <summary>
+            获取JWT的方法1
+            </summary>
+            <param name="name">用户名</param>
+            <param name="pass">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.LoginController.GetJwtToken3(System.String,System.String)">
+            <summary>
+            获取JWT的方法3：整个系统主要方法
+            </summary>
+            <param name="name">用户名</param>
+            <param name="pass">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.LoginController.GetJwtTokenSecret(System.String,System.String)">
+            <summary>
+            获取JWT
+            </summary>
+            <param name="name"></param>
+            <param name="pass"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.LoginController.Md5Password(System.String)">
+            <summary>
+            测试 MD5 加密字符串
+            </summary>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.LoginController.Login(System.String,System.String)">
+            <summary>
+            登录
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.LoginController.LoginSuccess(System.String)">
+            <summary>
+            登录
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HSPS.Web.Api.Controllers.PermissionController">
+            <summary>
+            权限控制器
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.PermissionController.#ctor(HSPS.Web.IServices.IPermissionServices)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.PermissionController.GetAllPermission">
+            <summary>
+            获取所有的权限，用于给用户配置权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.PermissionController.GetUserResourcePermissionDict(System.String)">
+            <summary>
+            根据用户名获取用户拥有资源下的所有权限
+            </summary>
+            <param name="username">用户登录名</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.PermissionController.GetUserPermissionByUserName(System.String)">
+            <summary>
+            根据用户名获取用户的所有权限
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.PermissionController.HasVisitPermission(System.String,System.String)">
+            <summary>
+            判断用户是否有访问权限
+            </summary>
+            <param name="username"></param>
+            <param name="localPath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HSPS.Web.Api.Controllers.ReportController">
+            <summary>
+            报告操作控制器
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.ReportController.#ctor(HSPS.Web.IServices.IReportServices,HSPS.Web.IServices.IUserServices,HSPS.Web.IServices.IDepartmentServices,HSPS.Web.IServices.BASE.ICommonServices,HSPS.Web.Common.HttpContextUser.IUser,AutoMapper.IMapper)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="reportServices"></param>
+            <param name="userServices"></param>
+            <param name="departmentServices"></param>
+            <param name="commonServices"></param>
+            <param name="user"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.ReportController.SearchReport(HSPS.Web.Model.Models.Extensions.ReportQueryModel)">
+            <summary>
+            分页获取所有报告（wcf）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.ReportController.GetReportImage(System.Int64)">
+            <summary>
+            根据id获取报告图片
+            </summary>
+            <param name="id">主键id</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.ReportController.GetSearchCondition(HSPS.Web.Model.Models.Extensions.ReportQueryModel)">
+            <summary>
+            获取查询条件
+            </summary>
+            <param name="model">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.ReportController.ConvertSortNameToTableSortName(System.String)">
+            <summary>
+            排序字段加上表名
+            </summary>
+            <param name="sortName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.ReportController.IsContainSqlFilter(System.String)">
+            <summary>
+            是否包含sql关键字
+            </summary>
+            <param name="InText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.ReportController.GetReportFiles(HSPS.Web.Model.Models.Extensions.Report)">
+            <summary>
+            获取报告的文件
+            </summary>
+            <param name="rc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HSPS.Web.Api.Controllers.ReportTypeController">
+            <summary>
+            报告类别接口
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.ReportTypeController.#ctor(HSPS.Web.IServices.IReportTypeServices,AutoMapper.IMapper)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="reportTypeServices"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.ReportTypeController.GetReportTypes">
+            <summary>
+            获取所有报告类别（wcf）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HSPS.Web.Api.Controllers.RoleController">
+            <summary>
+            角色控制器
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.RoleController.#ctor(HSPS.Web.IServices.IRoleServices,HSPS.Web.IServices.IPermissionServices)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.RoleController.GetRolePermissionTree">
+            <summary>
+            获取所有权限树(wcf)
+            </summary>
+            <returns>权限树集合列表</returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.RoleController.GetAllRole">
+            <summary>
+            获取所有角色 wcf
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.RoleController.GetUsersByRoleID(System.Int32)">
+            <summary>
+            根据角色ID获取用户 wcf
+            </summary>
+            <param name="roleID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.RoleController.GetRoleByRoleName(System.String)">
+            <summary>
+            根据角色名称获取角色 wcf
+            </summary>
+            <param name="roleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.RoleController.IsExists(System.String)">
+            <summary>
+            角色是否存在 wcf
+            </summary>
+            <param name="roleName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.RoleController.DeleteRole(System.Int32)">
+            <summary>
+            根据角色id删除角色 wcf 未通
+            </summary>
+            <param name="roleID">角色id</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.RoleController.UpdateRole(HSPS.Web.Model.Models.Extensions.Role)">
+            <summary>
+            修改角色 wcf 未通
+            </summary>
+            <param name="role">角色</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.RoleController.AddRole(HSPS.Web.Model.Models.Extensions.Role)">
+            <summary>
+            新增角色 wcf 暂未通
+            </summary>
+            <param name="role">角色</param>
+            <returns></returns>
+        </member>
+        <member name="T:HSPS.Web.Api.Controllers.UserController">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.#ctor(HSPS.Web.Repository.UnitOfWorks.IUnitOfWorkManage,HSPS.Web.IServices.IPermissionServices,HSPS.Web.IServices.IUserServices,HSPS.Web.IServices.IDepartmentServices,HSPS.Web.IServices.IReportTypeServices,AutoMapper.IMapper)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.GetInfoByToken(System.String)">
+            <summary>
+            根据token获取用户详情
+            【无权限】
+            </summary>
+            <param name="token">token令牌</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.Get">
+            <summary>
+            获取用户(sqlsugar)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.GetUserByUsername(System.String)">
+            <summary>
+            根据用户名称获取用户 wcf
+            </summary>
+            <param name="username">用户登陆名</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.IsExists(System.String)">
+            <summary>
+            根据用户名称获取用户 wcf
+            </summary>
+            <param name="username">用户登陆名</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.GetAllUser">
+            <summary>
+            获取所有用户 wcf
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.UpdateUser(HSPS.Web.Model.Models.Extensions.User)">
+            <summary>
+            修改用户 wcf 未通
+            </summary>
+            <param name="updateUser">用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.UpdateUserPassword(System.Int32,System.String,System.String)">
+            <summary>
+            修改用户密码 sqlsugar
+            </summary>
+            <param name="userId">用户id</param>
+            <param name="userName">登录名</param>
+            <param name="pass">新密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.InsertUser(HSPS.Web.Model.Models.Extensions.User)">
+            <summary>
+            添加用户 wcf 未通
+            </summary>
+            <param name="addUser">用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.AddOrUpdateUserAuditRanges(System.String)">
+            <summary>
+            添加修改用户审核权限 wcf 未通
+            </summary>
+            <param name="json">用户选择所有报告类别集合序列化的json</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.DeleteUserByID(System.Int32)">
+            <summary>
+            根据用户id删除用户 wcf 未通
+            </summary>
+            <param name="ID">用户id</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Api.Controllers.UserController.DeleteUser(HSPS.Web.Model.Models.Extensions.User)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="user">用户</param>
+            <returns></returns>
+        </member>
+        <member name="T:HSPS.Web.Api.Filter.AutofacPropertityModuleReg">
+            <summary>
+            服务注册
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Api.Filter.AutofacPropertityModuleReg.Load(Autofac.ContainerBuilder)">
+            <summary>
+            服务注册
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:HSPS.Web.Filter.GlobalExceptionsFilter">
+            <summary>
+            全局异常错误日志
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Filter.GlobalExceptionsFilter.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{HSPS.Web.Filter.GlobalExceptionsFilter},Microsoft.AspNetCore.SignalR.IHubContext{HSPS.Web.Hubs.ChatHub})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="env"></param>
+            <param name="loggerHelper"></param>
+            <param name="hubContext"></param>
+        </member>
+        <member name="M:HSPS.Web.Filter.GlobalExceptionsFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            重写异常处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:HSPS.Web.Filter.GlobalExceptionsFilter.WriteLog(System.String,System.Exception)">
+            <summary>
+            自定义返回格式
+            </summary>
+            <param name="throwMsg"></param>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HSPS.Web.Filter.InternalServerErrorObjectResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Filter.InternalServerErrorObjectResult.#ctor(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:HSPS.Web.Filter.JsonErrorResponse">
+            <summary>
+            返回错误信息
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Filter.JsonErrorResponse.Message">
+            <summary>
+            生产环境的消息
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Filter.JsonErrorResponse.DevelopmentMessage">
+            <summary>
+            开发环境的消息
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.API.Filter.GlobalRoutePrefixFilter">
+            <summary>
+            全局路由前缀公约
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.API.Filter.GlobalRoutePrefixFilter.#ctor(Microsoft.AspNetCore.Mvc.Routing.IRouteTemplateProvider)">
+            <summary>
+            构造
+            </summary>
+            <param name="routeTemplateProvider"></param>
+        </member>
+        <member name="M:HSPS.Web.API.Filter.GlobalRoutePrefixFilter.Apply(Microsoft.AspNetCore.Mvc.ApplicationModels.ApplicationModel)">
+            <summary>
+            接口的Apply方法
+            </summary>
+            <param name="application"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>..\HSPS.Web.Api\HSPS.Web.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<NoWarn>1701;1702;8603</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<NoWarn>1701;1702;8603</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Logs\**" />
+		<Compile Remove="wwwroot\ui\**" />
+		<Content Remove="Logs\**" />
+		<Content Remove="wwwroot\ui\**" />
+		<EmbeddedResource Remove="Logs\**" />
+		<EmbeddedResource Remove="wwwroot\ui\**" />
+		<None Remove="Logs\**" />
+		<None Remove="wwwroot\ui\**" />
+		<None Remove="wwwroot\Temp\**" />
+		<Compile Remove="wwwroot\Temp\**" />
+		<EmbeddedResource Remove="wwwroot\Temp\**" />
+		<Content Remove="wwwroot\Temp\**" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<Content Remove="wwwroot\js\jquery-3.3.1.min.js" />
+		<Content Remove="wwwroot\logo\favicon-32x32.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="index.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="index.html" />
+		<EmbeddedResource Include="wwwroot\js\jquery-3.3.1.min.js">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</EmbeddedResource>
+		<EmbeddedResource Include="wwwroot\logo\favicon-32x32.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\HSPS.Web.Extensions\HSPS.Web.Extensions.csproj" />
+	</ItemGroup>
+
+
+</Project>

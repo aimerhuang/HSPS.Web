@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;8625;1951</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;8625;1951</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HSPS.Web.Common\HSPS.Web.Common.csproj" />
+    <ProjectReference Include="..\HSPS.Web.Model\HSPS.Web.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="HIPS.HSPS.Interface.Persistence.Web">
+      <HintPath>..\Dlls\HIPS.HSPS.Interface.Persistence.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

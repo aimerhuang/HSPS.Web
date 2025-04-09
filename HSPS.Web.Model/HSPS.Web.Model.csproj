@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>..\HSPS.Web.Api\HSPS.Web.Model.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591;8618</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1591;8618</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Base\InvalidAttribute.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="SqlSugarCore" Version="5.1.4.188" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="HIPS.HSPS.Common">
+      <HintPath>..\Dlls\HIPS.HSPS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.Interface.Persistence.Web">
+      <HintPath>..\Dlls\HIPS.HSPS.Interface.Persistence.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="YiBan.LoggerServer.Contracts">
+      <HintPath>..\Dlls\YiBan.LoggerServer.Contracts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Extensions\UserTerminal\" />
+  </ItemGroup>
+
+
+</Project>

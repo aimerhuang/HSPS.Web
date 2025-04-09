@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Utility\PagerParamterExtension.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="8.1.1" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HSPS.Web.Common\HSPS.Web.Common.csproj" />
+    <ProjectReference Include="..\HSPS.Web.Model\HSPS.Web.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="HIPS.HSPS.Common">
+      <HintPath>..\Dlls\HIPS.HSPS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.DataContract.Common">
+      <HintPath>..\Dlls\HIPS.HSPS.DataContract.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.DepartmentService.Interface.ParseImage">
+      <HintPath>..\Dlls\HIPS.HSPS.DepartmentService.Interface.ParseImage.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.Interface.Common">
+      <HintPath>..\Dlls\HIPS.HSPS.Interface.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.Interface.Persistence.Rmp">
+      <HintPath>..\Dlls\HIPS.HSPS.Interface.Persistence.Rmp.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.Interface.Persistence.Web">
+      <HintPath>..\Dlls\HIPS.HSPS.Interface.Persistence.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.Interface.PrintProxy.Web">
+      <HintPath>..\Dlls\HIPS.HSPS.Interface.PrintProxy.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="YiBan.HSPS.Main.Models">
+      <HintPath>..\Dlls\YiBan.HSPS.Main.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="YiBan.LoggerServer.Contracts">
+      <HintPath>..\Dlls\YiBan.LoggerServer.Contracts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

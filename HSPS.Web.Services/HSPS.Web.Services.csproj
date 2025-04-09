@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;8625;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;8625;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HSPS.Web.Common\HSPS.Web.Common.csproj" />
+    <ProjectReference Include="..\HSPS.Web.IServices\HSPS.Web.IServices.csproj" />
+    <ProjectReference Include="..\HSPS.Web.Repository\HSPS.Web.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="HIPS.HSPS.Common">
+      <HintPath>..\Dlls\HIPS.HSPS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.DataContract.Common">
+      <HintPath>..\Dlls\HIPS.HSPS.DataContract.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.Interface.Common">
+      <HintPath>..\Dlls\HIPS.HSPS.Interface.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="HIPS.HSPS.Interface.Persistence.Web">
+      <HintPath>..\Dlls\HIPS.HSPS.Interface.Persistence.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

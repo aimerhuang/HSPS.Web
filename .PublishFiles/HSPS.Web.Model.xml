@@ -1,0 +1,3299 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HSPS.Web.Model</name>
+    </assembly>
+    <members>
+        <member name="T:HSPS.Web.Model.Base.BaseLog">
+            <summary>
+            log
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Base.BaseLog.DateTime">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Base.InvalidAttribute.VerifyInt">
+            <summary>
+            验证整型格式(Post请求：将类型设置为可空:int? 才能正确显示设置的错误信息)
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Base.InvalidAttribute.VerifyFloat">
+            <summary>
+            验证整型格式(Post请求：将类型设置为可空:int? 才能正确显示设置的错误信息)
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Base.InvalidAttribute.VerifyDatetime">
+            <summary>
+            验证日期格式(Post请求：将类型设置为可空:datetime? 才能正确显示设置的错误信息)
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Base.InvalidAttribute.CompareValuesAttribute">
+            <summary>
+            Specifies that the field must compare favourably with the named field, if objects to check are not of the same type
+            false will be return
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Base.InvalidAttribute.CompareValuesAttribute.OtherProperty">
+            <summary>
+            The other property to compare to
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Model.Base.InvalidAttribute.CompareValuesAttribute.#ctor(System.String,HSPS.Web.Model.Base.InvalidAttribute.CompareValues)">
+            <summary>
+            Creates the attribute
+            </summary>
+            <param name="otherProperty">The other property to compare to</param>
+        </member>
+        <member name="M:HSPS.Web.Model.Base.InvalidAttribute.CompareValuesAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Determines whether the specified value of the object is valid.  For this to be the case, the objects must be of the same type
+            and satisfy the comparison criteria. Null values will return false in all cases except when both
+            objects are null.  The objects will need to implement IComparable for the GreaterThan,LessThan,GreatThanOrEqualTo and LessThanOrEqualTo instances
+            </summary>
+            <param name="value">The value of the object to validate</param>
+            <param name="validationContext">The validation context</param>
+            <returns>A validation result if the object is invalid, null if the object is valid</returns>
+        </member>
+        <member name="T:HSPS.Web.Model.Base.InvalidAttribute.CompareValues">
+            <summary>
+            Indicates a comparison criteria used by the CompareValues attribute
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DEFAULT_REPORT_IMAGE_EXTENSION">
+            <summary>
+            报告图片默认的格式
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DEFAULT_REPORT_XPS_EXTENSION">
+            <summary>
+            报告原始文件XPS格式
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DEFAULT_REPORT_PDF_EXTENSION">
+            <summary>
+            报告原始文件PDF格式
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DEFAULT_REPORT_FILM_EXTENSION">
+            <summary>
+            胶片略缩图片默认的格式
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DEFAULT_REPORT_FILMSMALLIMAGE_EXTENSION">
+            <summary>
+            胶片略缩图片默认的格式
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DEFAULT_REPORT_MANAYFILMIMAGE_EXTENSION">
+            <summary>
+            多胶片时设置规则区域图的默认格式
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DEFAULT_REPORT_TXT_EXTENSION">
+            <summary>
+            报表文本默认的格式
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.OPERATION_SUCCESS_DEFAULT_MSG">
+            <summary>
+            数据处理成功，Handler页默认写入到前台的标识
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.OPERATION_ERROR_DEFAULT_MSG">
+            <summary>
+            数据处理失败，Handler页默认写入到前台的标识
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DATA_EMPTY_DEFAULT_MSG">
+            <summary>
+            列表控件数据为空时，默认写入到前台的内容，避免IE浏览器下easyui datagrid控件报错
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_USER_USERNAME">
+            <summary>
+            用户登陆后，记录用户名称的Session名称
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_USER_ID">
+            <summary>
+            用户登陆后，记录用户ID的Session名称
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_USER_NAME">
+            <summary>
+            用户登陆后，记录用户姓名的Session名称
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_QUERY_CACHE">
+            <summary>
+            记录用户的快捷条件
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.CACHE_HSPS_USER_PERMISSION">
+            <summary>
+            用户登陆后，记录用户权限的Cache
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.CACHE_HSPS_CODEMAP">
+            <summary>
+            记录CodeMap的Cache
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_MENU_DATA">
+            <summary>
+            记录菜单数据
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_MAIN_MENU_DATA">
+            <summary>
+            记录Main/Sub菜单数据
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_TAB_MENU_DATA">
+            <summary>
+            记录Tab菜单数据
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_ERROR_MESSAGE">
+            <summary>
+            发生错误后，记录的Session名称
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_HOSPITAL_ALERT">
+            <summary>
+            是否提醒过医院信息
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DEFAULT_SPLIT_SIGN">
+            <summary>
+            默认的分隔符
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.DEFAULT_APP_NAME">
+            <summary>
+            app名称
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.HOSPITAL_FLAG">
+            <summary>
+            医院识别名
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.SESSION_STORAGE_ALERT">
+            <summary>
+            是否提醒过存储空间
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Constant.STORAGE_FLAG">
+            <summary>
+            存储识别名
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Dtos.ReportDto">
+            <summary>
+            报告列表集合
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ReportID">
+            <summary>
+            ReportID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ID">
+            <summary>
+            ReportContextID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.RelationID">
+            <summary>
+            关联的报告ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintColorValue">
+            <summary>
+            色彩
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintMediaValue">
+            <summary>
+            介质
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintSizeValue">
+            <summary>
+            尺寸
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintStatusValue">
+            <summary>
+            打印状态枚举值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ReportStatusValue">
+            <summary>
+            报告状态值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ParseRuleTypeValue">
+            <summary>
+            报告类型值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.BarCode">
+            <summary>
+            条码号
+            </summary>
+            
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.CheckID">
+            <summary>
+            检查号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.CheckTime">
+            <summary>
+            检查时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PatientIDStr">
+            <summary>
+            病人编号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PatientName">
+            <summary>
+            病人姓名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.StationID">
+            <summary>
+            来源ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.StationName">
+            <summary>
+            来源ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.StationIP">
+            <summary>
+            来源IP
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.DepartmentID">
+            <summary>
+            科室ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.DepartmentName">
+            <summary>
+            科室名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.Sex">
+            <summary>
+            病人性别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.CheckPart">
+            <summary>
+            检查部位
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ReportTypeName">
+            <summary>
+            报告类别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ReportTypeID">
+            <summary>
+            报告类型ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ReportStatusName">
+            <summary>
+            报告状态名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.DiscernStatusName">
+            <summary>
+            识别状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintStatusName">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ParseRuleTypeName">
+            <summary>
+            报告类型中文描述：胶片或者报告
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ReceiveTime">
+            <summary>
+            接收时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintMediaName">
+            <summary>
+            介质
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintSizeName">
+            <summary>
+            尺寸
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintColorName">
+            <summary>
+            色彩
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintLastTime">
+            <summary>
+            最后打印时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.Layout">
+            <summary>
+            排版
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PageCount">
+            <summary>
+            页数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintFileType">
+            <summary>
+            打印时报告文件的后缀
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.Title">
+            <summary>
+            报告关键字
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ReportPath">
+            <summary>
+            报告路径
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.CustomFieldsValueList">
+            <summary>
+            自定义规则列的值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.HspsPatientID">
+            <summary>
+            病人表的ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ParseData">
+            <summary>
+            解析数据？
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.DiscernStatusValue">
+            <summary>
+            识别状态枚举值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.IsColorful">
+            <summary>
+            是否彩色
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintStatus">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.Media">
+            <summary>
+            打印介质
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PintQuality">
+            <summary>
+            打印质量
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintSize">
+            <summary>
+            尺寸
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintWay">
+            <summary>
+            打印方式
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ParseRuleType">
+            <summary>
+            报告类别（胶片或报告）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.FileExtType">
+            <summary>
+            报告原始文件的后缀
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ExaminationCompany">
+            <summary>
+            检查单位
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ExaminationDepartment">
+            <summary>
+            检查部门
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.IDNO">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.Phone">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.VisitType">
+            <summary>
+            就诊类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PrintCount">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.HospitalArea">
+            <summary>
+            院区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.PatientArea">
+            <summary>
+            病区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ClinicalDepartment">
+            <summary>
+            临床科室
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.HospitalNo">
+            <summary>
+            住院号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.AuditDoctor">
+            <summary>
+            总检医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.IsExamination">
+            <summary>
+            是否总监报告
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ReportAudit">
+            <summary>
+            审核记录
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ReportDoctor">
+            <summary>
+            报告医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.FirstAuditDoctor">
+            <summary>
+            一级审核医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.FirstAuditTime">
+            <summary>
+            一级审核时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.SecondAuditDoctor">
+            <summary>
+            二级审核医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.SecondAuditTime">
+            <summary>
+            二级审核时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ThirdAuditDoctor">
+            <summary>
+            三级审核医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.ThirdAuditTime">
+            <summary>
+            三级审核时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportDto.AuditLevel">
+            <summary>
+            审核状态
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Dtos.ReportTypeDto">
+            <summary>
+            报告类别模型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.ReportTypeDto.GetFilmMode">
+            <summary>
+            取片方式
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Dtos.RuleTreeDto">
+            <summary>
+            权限树集合列表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.id">
+            <summary>
+            规则设置树状节点id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.text">
+            <summary>
+            规则设置树状节点名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.sourceId">
+            <summary>
+            规则的数据ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.state">
+            <summary>
+            节点状态（是否打开或关闭）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.type">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.parentId">
+            <summary>
+            父节点ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.isDefault">
+            <summary>
+            是否默认
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.rotation">
+            <summary>
+            角度模式
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.children">
+            <summary>
+            规则设置树状孩子节点
+            </summary>        
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.isAllowDrop">
+            <summary>
+            节点是否允许拖动
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.isAllowIn">
+             <summary>
+            是否允许其它节点拖进来
+             </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.RuleTreeDto.attributes">
+            <summary>
+            自定义属性
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.UserDto.ID">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.UserDto.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Dtos.UserDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.AlarmTypeEnum.Normal">
+            <summary>
+            一般
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.AlarmTypeEnum.Warning">
+            <summary>
+            警告
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.AlarmTypeEnum.Serious">
+            <summary>
+            严重
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.ConfigType.Default">
+            <summary>
+            默认配置
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.ConfigType.ATerminal">
+            <summary>
+            某个终端配置
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.DiscernStatusEnum">
+            <summary>
+            识别模式
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.DiscernStatusEnum.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.DiscernStatusEnum.AutoDiscern">
+            <summary>
+            自动识别
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.DiscernStatusEnum.ManualDiscern">
+            <summary>
+            人工操作识别
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.DiscernStatusEnum.UnDiscern">
+            <summary>
+            无法自动识别
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.EnumAuditLevel">
+            <summary>
+            审核级别枚举
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.FileExtTypeEnum">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.FileExtTypeEnum.Pdf">
+            <summary>
+            pdf文件类型
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.FileExtTypeEnum.Jpeg">
+            <summary>
+            jepg文件类型
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.FileExtTypeEnum.Xps">
+            <summary>
+            xps文件类型
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.FileExtTypeEnum.Txt">
+            <summary>
+            文本文件类型
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.FileExtTypeEnum.Json">
+            <summary>
+            json解析文本类型
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.FileExtTypeEnum.Jpg">
+            <summary>
+            图片类型
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.FileTypeEnum">
+            <summary>
+            类别（报告/胶片/未知
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.FileTypeEnum.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.FileTypeEnum.Report">
+            <summary>
+            报告
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.FileTypeEnum.Image">
+            <summary>
+            影像
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.MediaEnum.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintFormatEnum.SourceFile">
+            <summary>
+            源文件
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintFormatEnum.ImageFile">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.PrintModeEnum">
+            <summary>
+            打印类型
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintModeEnum.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintModeEnum.Auto">
+            <summary>
+            直接打印
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintModeEnum.Manual">
+            <summary>
+            自助打印
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintModeEnum.Type">
+            <summary>
+            由报告类别决定
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.PrintSizeEnum">
+             <summary>
+            打印尺寸
+             </summary>   
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintSizeEnum.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.PrintSolutionEnum">
+            <summary>
+            打印方式
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.PrintStatusEnum">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintStatusEnum.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintStatusEnum.Unprint">
+            <summary>
+            未打印
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintStatusEnum.Printing">
+            <summary>
+            正在打印
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintStatusEnum.Printed">
+            <summary>
+            已打
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.PrintWayEnum">
+            <summary>
+             打印方式
+             </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintWayEnum.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintWayEnum.Auto">
+            <summary>
+            直接打印
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintWayEnum.Manual">
+            <summary>
+            自助打印
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintWayEnum.Nope">
+            <summary>
+            不打印
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.PrintWayEnum.Need">
+            <summary>
+            按需打印
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.QRCodeTypeEnum">
+            <summary>
+            二维码类别
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.StationEnum.Unknow">
+            未知
+        </member>
+        <member name="F:HSPS.Web.Model.Models.StationEnum.IPS">
+            <summary>
+            IPS
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.StationEnum.IntegrationPlatform">
+            <summary>
+            集成平台
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.StationEnum.Customization">
+            <summary>
+            定制化
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Models.StationEnum.Radiation">
+            <summary>
+            放射
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.AuditConditions">
+            <summary>
+            条件类
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.AuditConditions.EnumAuditLevel">
+            <summary>
+            审核等级（一级，二级，三级）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.AuditConditions.ID">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.AuditConditions.IsUsedUKey">
+            <summary>
+            是否使用了Ukey
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.AuditConditions.ReportTypeID">
+            <summary>
+            报告类别id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.CodeMap.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.CodeMap.ParentID">
+            <summary>
+            父ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.CodeMap.ClassType">
+            <summary>
+            数据字典类别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.CodeMap.Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.CodeMap.Item">
+            <summary>
+            数据字典项
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.CodeMap.Sort">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.CodeMap.Description">
+            <summary>
+            数据字典描述
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.CodeMap.IsEnable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.Configure">
+            <summary>
+            配置表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Configure.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Configure.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Configure.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Configure.Dispaly">
+            <summary>
+            是否在页面显示
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.DatetimePeriod">
+            <summary>
+            查询时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.DatetimePeriod.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.DatetimePeriod.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.Department">
+            <summary>
+            科室表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.DelayTimes">
+            <summary>
+            报告延迟领取时间（秒）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.FilingTime">
+            <summary>
+            （未使用，弃用）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.Host">
+            <summary>
+            主机名/IP
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.GetReportPeriod">
+            <summary>
+            领取报告期限
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.IsAlive">
+            <summary>
+            是否在线
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.IsAllowRepeat">
+            <summary>
+            是否允许重复报告
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.Name">
+            <summary>
+            科室名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.Port">
+            <summary>
+            科室端口
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Department.PrintMode">
+            <summary>
+            打印类型
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.Module">
+            <summary>
+            模块表（顶级菜单栏
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Module.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Module.Name">
+            <summary>
+            模块名称（顶级菜单栏名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Module.Code">
+            <summary>
+            英文代号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Module.ParentID">
+            <summary>
+            父级id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Module.Resources">
+            <summary>
+            菜单列表（二级菜单列表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Pager`1.PageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Pager`1.PageSize">
+            <summary>
+            每页显示条数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Pager`1.TotalCount">
+            <summary>
+            总条目数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Pager`1.Result">
+            <summary>
+            数据集合
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.Permission">
+            <summary>
+            权限表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Permission.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Permission.Code">
+            <summary>
+            权限代号（Visit可访问，NeedPrint按需打印，Update可修改，Delete可删除）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Permission.Name">
+            <summary>
+            权限代号名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Permission.Description">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Permission.Resource">
+            <summary>
+            对应资源
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Permission.ResourceID">
+            <summary>
+            对应资源表id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.HospitalCode">
+            <summary>
+            医院编码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.Name">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.Host">
+            <summary>
+            ip地址
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.TerminalType">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.TerminalTypeName">
+            <summary>
+            终端类别名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.SupportFileType">
+            <summary>
+            可打印类型枚举 0报告/1胶片/2报告和胶片
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.SNumber">
+            <summary>
+            设备编号(SN)
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.AETitle">
+            <summary>
+            AETitle
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.Version">
+            <summary>
+            终端版本
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.SupportDeptId">
+            <summary>
+            科室id（弃用
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.SupportDeptString">
+            <summary>
+            科室名称（弃用
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.IsAlive">
+            <summary>
+            是否在线
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.PrinterStata">
+            <summary>
+            打印机状态（弃用
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.Brand">
+            <summary>
+            品牌
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.HospitalArea">
+            <summary>
+            所属院区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.HospitalAreaValue">
+            <summary>
+            所属院区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.PatientArea">
+            <summary>
+            所属病区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.PatientAreaValue">
+            <summary>
+            所属病区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.ClinicalDepartment">
+            <summary>
+            临床科室
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.ClinicalAreaValue">
+            <summary>
+            临床科室
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.QRCode">
+            <summary>
+            二维码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.SharedName">
+            <summary>
+            共享打印机名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.IsEnabled">
+            <summary>
+            是否可用
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.ModelNo">
+            <summary>
+            型号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.PrinterType">
+            <summary>
+            打印机类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.InstallTime">
+            <summary>
+            安装时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.LastUpdateTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.IsEnabledText">
+            <summary>
+            有效性
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.PrintFormatText">
+            <summary>
+            支持打印格式
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.PrintFormatValue">
+            <summary>
+            支持打印格式描述
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Printer.PaperRemain">
+            <summary>
+            打印机余量显示
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.PrinterPosition">
+            <summary>
+            终端对应打印机列表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.HospitalCode">
+            <summary>
+            医院编码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.PrinterID">
+            <summary>
+            打印机ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.PrinterName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.PartTypeName">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.ModelNo">
+            <summary>
+            型号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.ModelNoText">
+            <summary>
+            型号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.SNumber">
+            <summary>
+            SN
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.QRCode">
+            <summary>
+            二维码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.TerminalName">
+            <summary>
+            终端名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.TerminalSN">
+            <summary>
+            终端SN
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.TerminalType">
+            <summary>
+            终端类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.TerminalTypeName">
+            <summary>
+            终端类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.TerminalQRCode">
+            <summary>
+            终端二维码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.InstallTime">
+            <summary>
+            安装时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.PrintSize">
+            <summary>
+            打印机尺寸
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.TerminalID">
+            <summary>
+            终端id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.PrinterStatus">
+            <summary>
+            打印机状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.PrinterStatusValue">
+            <summary>
+            打印机状态(原值)
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.ReportTime">
+            <summary>
+            上报时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.UENameAndPrinterName">
+            <summary>
+            终端与打印机名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.PartType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.IsEnabledText">
+            <summary>
+            有效性
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.IsEnabled">
+            <summary>
+            有效性
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.LastUpdateTime">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.Media">
+            <summary>
+            媒体
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.IsColorful">
+            <summary>
+            是否彩印
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.ErrorCode">
+            <summary>
+            打印机口错误代码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.ErrorMessage">
+            <summary>
+            打印机口错误信息
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.PaperRemain">
+            <summary>
+            纸张剩余量
+            2.4 耗材剩余量增加
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.ConsumablesRemain">
+            <summary>
+            打印机耗材剩余量 
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrinterPosition.PaperCount">
+            <summary>
+            打印机耗材余量数字
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.PrintSolutionApply">
+            <summary>
+            类别对应打印方式
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrintSolutionApply.Enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrintSolutionApply.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrintSolutionApply.ReportType">
+            <summary>
+            类别集合
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrintSolutionApply.PrintSolutionName">
+            <summary>
+            打印方式名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.PrintSolutionApply.PrintSolution">
+            <summary>
+            打印方式枚举
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.ReportAudit">
+            <summary>
+            审核记录
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.ID">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.FirstAuditDoctor">
+            <summary>
+            一级审核医生姓名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.FirstAuditDoctorID">
+            <summary>
+            一级审核医生用户名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.FirstAuditTime">
+            <summary>
+            一级审核时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.SecondAuditDoctor">
+            <summary>
+            二级审核医生姓名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.SecondAuditDoctorID">
+            <summary>
+             二级审核医生用户名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.SecondAuditTime">
+            <summary>
+            二级审核时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.ThirdAuditDoctor">
+            <summary>
+            三级审核医生姓名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.ThirdAuditDoctorID">
+            <summary>
+            三级审核医生用户名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportAudit.ThirdAuditTime">
+            <summary>
+            三级审核时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportParseRule.ReportTypeID">
+            <summary>
+            类别id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportParseRule.ParseField">
+            <summary>
+            字段枚举
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.ReportType">
+            <summary>
+            类别表（报告/胶片）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.ID">
+            <summary>
+            类别id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.IsColorful">
+            <summary>
+            是否彩色
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.Name">
+            <summary>
+            类别名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.DepartmentID">
+            <summary>
+            科室id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.Media">
+            <summary>
+            打印介质
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.PintQuality">
+            <summary>
+            打印质量枚举值（Unknow = -1，Low = 0，Middle = 1，High = 2
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.PrintSize">
+            <summary>
+            打印尺寸
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.ParseRuleType">
+            <summary>
+            类别（报告/胶片/未知
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.MediaValue">
+            <summary>
+            打印介质名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.PintQualityValue">
+            <summary>
+            打印质量名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.PrintSizeValue">
+            <summary>
+            打印尺寸名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.ParseRuleTypeValue">
+            <summary>
+            解析规则类别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.RelationID">
+            <summary>
+            关联id（放射科室下胶片类别关联报告类别用
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.PrintSolution">
+            <summary>
+            打印方式（Auto_Work直打 = 0，Auto_NoWork非工作时间直打 = 1，Manual自助打 = 2，Nope不打印 = 3
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.PlatformReportType">
+            <summary>
+            集成平台的报告类别Item（CT，MR，DR，CR，DSA，US，ES，PA，LIS）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.IsAudit">
+            <summary>
+            是否需要审核（默认0无需，1需要）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.TimeoutHour">
+            <summary>
+            超时时长（分钟
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.AuditLevel">
+            <summary>
+            审核级别（1,2,3）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.AuditConditions">
+            <summary>
+            审核条件
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.BusinessType">
+            <summary>
+            业务类型--0：全院；1：体检；2：病案（暂时无用，UI隐藏）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.MECReportType">
+            <summary>
+            体检报告类型--0：孤岛报告（默认为0），1：总检报告
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.Analysisway">
+            <summary>
+            解析方式（0为json解析，1为正则）。
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportType.GetFilmMode">
+            <summary>
+            取片方式（取值从codemap取） 0：胶片报告需匹配 2:报告需识别，胶片需匹配 3：无需匹配
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.Report">
+            <summary>
+            wcf接口的报告类
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ReportID">
+            <summary>
+            ReportID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ID">
+            <summary>
+            ReportContextID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.RelationID">
+            <summary>
+            关联的报告ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintColorValue">
+            <summary>
+            色彩
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintMediaValue">
+            <summary>
+            介质
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintSizeValue">
+            <summary>
+            尺寸
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintStatusValue">
+            <summary>
+            打印状态枚举值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ReportStatusValue">
+            <summary>
+            报告状态值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ParseRuleTypeValue">
+            <summary>
+            报告类型值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.BarCode">
+            <summary>
+            条码号
+            </summary>
+            
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.CheckID">
+            <summary>
+            检查号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.CheckTime">
+            <summary>
+            检查时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PatientIDStr">
+            <summary>
+            病人编号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PatientName">
+            <summary>
+            病人姓名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.StationID">
+            <summary>
+            来源ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.StationName">
+            <summary>
+            来源ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.StationIP">
+            <summary>
+            来源IP
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.DepartmentID">
+            <summary>
+            科室ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.DepartmentName">
+            <summary>
+            科室名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.Sex">
+            <summary>
+            病人性别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.CheckPart">
+            <summary>
+            检查部位
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ReportTypeName">
+            <summary>
+            报告类别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ReportTypeID">
+            <summary>
+            报告类型ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ReportStatusName">
+            <summary>
+            报告状态名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.DiscernStatusName">
+            <summary>
+            识别状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintStatusName">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ParseRuleTypeName">
+            <summary>
+            报告类型中文描述：胶片或者报告
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ReceiveTime">
+            <summary>
+            接收时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintMediaName">
+            <summary>
+            介质
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintSizeName">
+            <summary>
+            尺寸
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintColorName">
+            <summary>
+            色彩
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintLastTime">
+            <summary>
+            最后打印时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.Layout">
+            <summary>
+            排版
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PageCount">
+            <summary>
+            页数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintFileType">
+            <summary>
+            打印时报告文件的后缀
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.Title">
+            <summary>
+            报告关键字
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ReportPath">
+            <summary>
+            报告路径
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.CustomFieldsValueList">
+            <summary>
+            自定义规则列的值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.HspsPatientID">
+            <summary>
+            病人表的ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ParseData">
+            <summary>
+            解析数据？
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.DiscernStatusValue">
+            <summary>
+            识别状态枚举值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.IsColorful">
+            <summary>
+            是否彩色
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintStatus">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.Media">
+            <summary>
+            打印介质
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PintQuality">
+            <summary>
+            打印质量
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintSize">
+            <summary>
+            尺寸
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintWay">
+            <summary>
+            打印方式
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ParseRuleType">
+            <summary>
+            报告类别（胶片或报告）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.FileExtType">
+            <summary>
+            报告原始文件的后缀
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ExaminationCompany">
+            <summary>
+            检查单位
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ExaminationDepartment">
+            <summary>
+            检查部门
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.IDNO">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.Phone">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.VisitType">
+            <summary>
+            就诊类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PrintCount">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.HospitalArea">
+            <summary>
+            院区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.PatientArea">
+            <summary>
+            病区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ClinicalDepartment">
+            <summary>
+            临床科室
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.HospitalNo">
+            <summary>
+            住院号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.AuditDoctor">
+            <summary>
+            总检医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.IsExamination">
+            <summary>
+            是否总监报告
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ReportAudit">
+            <summary>
+            审核记录
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ReportDoctor">
+            <summary>
+            报告医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.FirstAuditDoctor">
+            <summary>
+            一级审核医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.FirstAuditTime">
+            <summary>
+            一级审核时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.SecondAuditDoctor">
+            <summary>
+            二级审核医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.SecondAuditTime">
+            <summary>
+            二级审核时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ThirdAuditDoctor">
+            <summary>
+            三级审核医生
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.ThirdAuditTime">
+            <summary>
+            三级审核时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Report.AuditLevel">
+            <summary>
+            审核状态
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Model.Models.Extensions.Report.op_Implicit(HIPS.HSPS.Interface.Persistence.Web.ReportContext)~HSPS.Web.Model.Models.Extensions.Report">
+            <summary>
+            wcf接口的report类
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:HSPS.Web.Model.Models.Extensions.Report.GetCustomFieldsValueListByXml(System.String)">
+            <summary>
+            解析自定义规则列的值并返回
+            </summary>
+            <param name="xml"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.ReportQueryModel">
+            <summary>
+            报告查询类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.BarCode">
+            <summary>
+            姓名/条码号/影像号/住院号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.HospitalNo">
+            <summary>
+            住院号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.IsFuzzy">
+            <summary>
+            是否模糊查询
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.DiscernStatus">
+            <summary>
+            识别状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.ReportStatus">
+            <summary>
+            报告状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.IsMatch">
+            <summary>
+            匹配状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.PrintStatus">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.FileType">
+            <summary>
+            作业类别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.MedicalTechDepart">
+            <summary>
+            医技科室id:多个科室用,隔开
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.ReportType">
+             <summary>
+            报告/胶片类别
+             </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.HospitalArea">
+            <summary>
+            院区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.PatientArea">
+            <summary>
+            病区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.ClinicalDepartment">
+            <summary>
+            临床科室
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.IsHistory">
+            <summary>
+            是否是历史报告
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.TotalTimePeriod">
+            <summary>
+            查询时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.IsByStation">
+            <summary>
+            是否按来源纬度统计
+            2023-3-23 hkl 来源ip
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.PageIndex">
+            <summary>
+            页索引
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.ReportQueryModel.PageSize">
+            <summary>
+            页显示数量
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.Resource">
+            <summary>
+            资源表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Resource.ID">
+            <summary>
+            资源id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Resource.ModuleID">
+            <summary>
+            模块id（顶级菜单栏id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Resource.Name">
+            <summary>
+            资源名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Resource.Description">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Resource.Code">
+            <summary>
+            资源代码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Resource.Url">
+            <summary>
+            资源路径
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Resource.Module">
+            <summary>
+            对应模块
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.ID">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.Name">
+            <summary>
+            角色名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.Description">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.Creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.Permissions">
+            <summary>
+            角色的权限集合
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.PermissionsIDs">
+            <summary>
+            角色的权限id集合
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.DefaultMenuId">
+            <summary>
+            角色的默认菜单id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.Url">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.UrlName">
+            <summary>
+            路径名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Role.DefaultUrl">
+            <summary>
+            角色默认菜单路径
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.SearchCondition">
+            <summary>
+            报告查询条件类
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.ExaminationCompany">
+            <summary>
+            体检单位
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.ExaminationDepartment">
+            <summary>
+            体检科室
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.IDNO">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.DiscernStatus">
+            <summary>
+            识别模式（自动，人工，无法识别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.PrintStatus">
+            <summary>
+            打印状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.ReportStatus">
+            <summary>
+            报告状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.PageIndex">
+            <summary>
+            页索引
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.PageSize">
+            <summary>
+            页大小
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.TotalCount">
+            <summary>
+            页数量
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.FileType">
+            <summary>
+            类别（报告/胶片/未知
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.TimeBegin">
+            <summary>
+            开始查询时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.TimeEnd">
+            <summary>
+            结束查询时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.Conditions">
+            <summary>
+            增加查询语句条件（后台使用
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.DepartmentIds">
+            <summary>
+            科室id集合
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.IsDesc">
+            <summary>
+            是否倒序
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.IsHistory">
+            <summary>
+            是否历史报告（是否归档
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.ReportTypeIds">
+            <summary>
+            类别id集合
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.SortItems">
+            <summary>
+            排序集合
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.IsMatch">
+            <summary>
+            胶片报告是否匹配
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.HospitalAreas">
+            <summary>
+            院区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.PatientAreas">
+            <summary>
+            病区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.HospitalNo">
+            <summary>
+            住院号
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.ClinicalDepartments">
+            <summary>
+            临床科室
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.OperationType">
+            <summary>
+            操作类型 [0:我的报告,1:待审核报告, 2:未审核报告管理]
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.UserName">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.ReportContextId">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.PrintCount">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.EnumAuditLevel">
+            <summary>
+            打印次数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SearchCondition.ReportDoctorName">
+            <summary>
+            报告医生
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.SignatureLocation">
+            <summary>
+            签章位置放置表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.Page">
+            <summary>
+            签章页码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.ReportTypeID">
+            <summary>
+            对应报告类别id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.Width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.XPoint">
+            <summary>
+            x坐标
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.YPoint">
+            <summary>
+            y坐标
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.DoctorType">
+            <summary>
+            文件类型枚举
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.DoctorTypeValue">
+            <summary>
+            医生类型（报告：审核）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.SignatureLocation.DoctorTypeKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.Station">
+            <summary>
+            来源表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.Department">
+            <summary>
+            科室
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.Host">
+            <summary>
+            来源ip
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.Name">
+            <summary>
+            来源名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.NameAndIP">
+            <summary>
+            名称和ip
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.ComputerName">
+            <summary>
+            电脑名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.Mac">
+            <summary>
+            mac地址
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.DepartmentID">
+            <summary>
+            科室id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.DepartmentName">
+            <summary>
+            科室名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.Station.TypeStr">
+            <summary>
+            类型名称
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.StationTerminalRelation">
+            <summary>
+            工作站打印机
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.Printer">
+            <summary>
+            打印机集合
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.ReportTypeID">
+            <summary>
+            类别id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.ReportTypeName">
+            <summary>
+            类别名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.PrintSolution">
+            <summary>
+            打印方式枚举
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.PrintSolutionStr">
+            <summary>
+            打印方式
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.StationID">
+            <summary>
+            工作站id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.StationHost">
+            <summary>
+            工作站
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.VisitType">
+            <summary>
+            就诊类型编码。0-未知，1-门诊，2-住院，3-体检。
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.UserTerminalID">
+            <summary>
+            打印机id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.UserTerminalName">
+            <summary>
+            打印机名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.ParseRuleType">
+            <summary>
+            打印类别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.DepartmentID">
+            <summary>
+            科室id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.StationTerminalRelation.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.AddUserAuditRangeModel">
+            <summary>
+            增加/修改 用户审核权限
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.AddUserAuditRangeModel.AuditLevel">
+            <summary>
+            审核级别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.AddUserAuditRangeModel.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.AddUserAuditRangeModel.ReportTypeID">
+            <summary>
+            报告类别id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.AddUserAuditRangeModel.StationID">
+            <summary>
+            来源id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.AddUserAuditRangeModel.UserID">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.User">
+            <summary>
+            用户表
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.User.ID">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.User.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.User.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.User.HospitalAreaIds">
+            <summary>
+            院区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.User.PatientAreaIds">
+            <summary>
+            病区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.User.ClinicalDepartmentIds">
+            <summary>
+            临床科室
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.User.HospitalAreas">
+            <summary>
+            院区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.User.PatientAreas">
+            <summary>
+            病区
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.User.ClinicalDepartments">
+            <summary>
+            临床科室
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.UserAuditRange">
+            <summary>
+            用户审核权限
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.UserAuditRange.AuditLevel">
+            <summary>
+            审核级别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.UserAuditRange.ReportTypeID">
+            <summary>
+            报告类别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.UserAuditRange.StationID">
+            <summary>
+            来源id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.UserAuditRange.UserID">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.Extensions.UserDoctor">
+            <summary>
+            医生签章
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.UserDoctor.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.UserDoctor.Type">
+            <summary>
+            类别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.UserDoctor.Name">
+            <summary>
+            医生姓名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.UserDoctor.SignatureImage">
+            <summary>
+            签章图形
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.Extensions.UserDoctor.StationID">
+            <summary>
+            工作站id
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.OrderBy">
+            <summary>
+            查询排序基类
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.OrderBy.Orderby">
+            <summary>
+            排序字段名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.OrderBy.Order">
+            <summary>
+            排序方式 --asc 升序 ---desc 降序
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.ReportType">
+            <summary>
+            类别模型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.ID">
+            <summary>
+            主键id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.Name">
+            <summary>
+            类别名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.DepartmentID">
+            <summary>
+            科室id
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.ParseRuleType">
+            <summary>
+            解析规则类别
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.PrintParameterID">
+            <summary>
+            打印参数ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.RelationID">
+            <summary>
+            放射科室下胶片类别关联报告类别用
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.PlatformReportType">
+            <summary>
+            集成平台的报告类别Item。CT，MR，DR，CR，DSA，US，ES，PA，LIS。
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.IsAudit">
+            <summary>
+            是否需要审核
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.TimeoutHour">
+            <summary>
+            超时时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.AuditLevel">
+            <summary>
+            审核等级
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.BusinessType">
+            <summary>
+            业务类型--0：全院；1：体检；2：病案（暂时无用，UI隐藏）
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.MECReportType">
+            <summary>
+            体检报告类型--0：孤岛报告（默认为0），1：总检报告
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.Analysisway">
+            <summary>
+            解析方式（0为json解析，1为正则）。
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.ReportType.GetFilmMode">
+            <summary>
+            体检报告类型--0：孤岛报告（默认为0），1：总检报告
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.Enabled">
+            <summary>
+            状态 <br/>
+            中立字段，某些表可使用某些表不使用
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.IsDeleted">
+            <summary>
+            中立字段，某些表可使用某些表不使用   <br/>
+            逻辑上的删除，非物理删除  <br/>
+            例如：单据删除并非直接删除
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.IsInternal">
+            <summary>
+            中立字段 <br/>
+            是否内置数据
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.CreateId">
+            <summary>
+            创建ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.CreateBy">
+            <summary>
+            创建者
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.ModifyId">
+            <summary>
+            修改ID
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.ModifyBy">
+            <summary>
+            更新者
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.ModifyTime">
+            <summary>
+            修改日期
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.RootTkey.BaseEntity.Version">
+            <summary>
+            数据版本
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.RootTkey.Interface.IDeleteFilter">
+            <summary>
+            软删除 过滤器
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Models.SysTenant">
+            <summary>
+            系统租户表 <br/>
+            根据TenantType 分为两种方案: <br/>
+            1.按租户字段区分<br/>
+            2.按租户分库<br/>
+            
+            <br/>
+            
+            注意:<br/>
+            使用租户Id方案,无需配置分库的连接
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.SysTenant.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.SysTenant.TenantType">
+            <summary>
+            租户类型
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.SysTenant.ConfigId">
+            <summary>
+            数据库/租户标识 不可重复<br/>
+            使用Id方案,可无需配置
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.SysTenant.Host">
+            <summary>
+            主机<br/>
+            使用Id方案,可无需配置
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.SysTenant.DbType">
+            <summary>
+            数据库类型<br/>
+            使用Id方案,可无需配置
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.SysTenant.Connection">
+            <summary>
+            数据库连接<br/>
+            使用Id方案,可无需配置
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.SysTenant.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.SysTenant.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.User.ID">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.User.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Models.User.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Enum.EnumDescriptionAttribute">
+            <summary>
+            枚举转换类
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Enum.EnumDescriptionAttribute.Description">
+            <summary>
+            枚举项描述，用于绑定下拉框时的文本
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Enum.EnumDescriptionAttribute.IsShow">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Enum.EnumDescriptionAttribute.IsDefault">
+            <summary>
+            是否默认
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Enum.EnumDescriptionAttribute.CustomSign">
+            <summary>
+            自定义标识
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Enum.PrintQualityEnum">
+            <summary>
+            打印质量
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Enum.PrintQualityEnum.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Enum.PrintQualityEnum.Low">
+            <summary>
+            高速,低质量
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Enum.PrintQualityEnum.Middle">
+            <summary>
+            中速,标准质量
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Enum.PrintQualityEnum.High">
+            <summary>
+            慢速,高质量
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Model.Helper.EnumHelper.EnumNameDescriptionToTextValueList(System.Type,System.String)">
+            <summary>
+            将枚举的Name和Description转换成TextValue集合
+            </summary>
+            <param name="enumType">枚举类型</param>
+            <param name="customSign">自定义标记，用于只绑定某些枚举字段</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Model.Helper.EnumHelper.EnumNameDescriptionToTextValueList(System.String,System.String)">
+            <summary>
+            将枚举的Name和Description转换成TextValue集合
+            </summary>
+            <param name="enumTypeName">枚举名称</param>
+            <param name="customSign">自定义标记，用于只绑定某些枚举字段</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Model.Helper.EnumHelper.EnumNameDescriptionToTextValueList(System.Type)">
+            <summary>
+            将枚举的Name和Description转换成TextValue集合
+            </summary>
+            <param name="enumType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Model.Helper.EnumHelper.LoadAllEnumNameDescriptionTextValueList">
+            <summary>
+            加载所有的枚举Name和Description转换成TextValue集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:HSPS.Web.Model.Helper.TextValue.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Helper.TextValue.CustomSign">
+            <summary>
+            自定义标记
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Helper.TextValue.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Helper.TextValue.IsDefault">
+            <summary>
+            是否默认
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.ReportFile">
+            <summary>
+            报告文件
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.ReportFile.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.ReportFile.FileExtType">
+            <summary>
+            文件类型枚举
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Log.GlobalErrorLog">
+            <summary>
+            全局错误日志
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Log.GlobalInformationLog">
+            <summary>
+            全局消息日志
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Log.GlobalWarningLog">
+            <summary>
+            全局告警日志
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.MessageModel`1">
+            <summary>
+            通用返回信息类
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.MessageModel`1.status">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.MessageModel`1.success">
+            <summary>
+            操作是否成功
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.MessageModel`1.msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.MessageModel`1.msgDev">
+            <summary>
+            开发者信息
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.MessageModel`1.response">
+            <summary>
+            返回数据集合
+            </summary>
+        </member>
+        <member name="M:HSPS.Web.Model.MessageModel`1.Success(System.String)">
+            <summary>
+            返回成功
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Model.MessageModel`1.Success(System.String,`0)">
+            <summary>
+            返回成功
+            </summary>
+            <param name="msg">消息</param>
+            <param name="response">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Model.MessageModel`1.Fail(System.String)">
+            <summary>
+            返回失败
+            </summary>
+            <param name="msg">消息</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Model.MessageModel`1.Fail(System.String,`0)">
+            <summary>
+            返回失败
+            </summary>
+            <param name="msg">消息</param>
+            <param name="response">数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:HSPS.Web.Model.MessageModel`1.Message(System.Boolean,System.String,`0)">
+            <summary>
+            返回消息
+            </summary>
+            <param name="success">失败/成功</param>
+            <param name="msg">消息</param>
+            <param name="response">数据</param>
+            <returns></returns>
+        </member>
+        <member name="P:HSPS.Web.Model.MessageModel.status">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.MessageModel.success">
+            <summary>
+            操作是否成功
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.MessageModel.msg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.MessageModel.response">
+            <summary>
+            返回数据集合
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.RootEntityTkey`1.Id">
+            <summary>
+            ID
+            泛型主键Tkey
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.PageModel`1">
+            <summary>
+            通用分页信息类
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.PageModel`1.page">
+            <summary>
+            当前页标
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.PageModel`1.pageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.PageModel`1.dataCount">
+            <summary>
+            数据总数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.PageModel`1.PageSize">
+            <summary>
+            每页大小
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.PageModel`1.data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.PaginationModel">
+            <summary>
+            所需分页参数
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.PaginationModel.PageIndex">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.PaginationModel.PageSize">
+            <summary>
+            每页大小
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.PaginationModel.OrderByFileds">
+            <summary>
+            排序字段(例如:id desc,time asc)
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.PaginationModel.Conditions">
+            <summary>
+            查询条件( 例如:id = 1 and name = 小明)
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Tenants.ITenantEntity">
+            <summary>
+            租户模型接口
+            </summary>
+        </member>
+        <member name="P:HSPS.Web.Model.Tenants.ITenantEntity.TenantId">
+            <summary>
+            租户Id
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Tenants.MultiTenantAttribute">
+            <summary>
+            标识 多租户 的业务表 <br/>
+            默认设置是多库       <br/>
+            公共表无需区分 直接使用主库 各自业务在各自库中 <br/>
+            </summary>
+        </member>
+        <member name="T:HSPS.Web.Model.Tenants.TenantTypeEnum">
+            <summary>
+            租户隔离方案
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Tenants.TenantTypeEnum.Id">
+            <summary>
+            Id隔离
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Tenants.TenantTypeEnum.Db">
+            <summary>
+            库隔离
+            </summary>
+        </member>
+        <member name="F:HSPS.Web.Model.Tenants.TenantTypeEnum.Tables">
+            <summary>
+            表隔离
+            </summary>
+        </member>
+        <member name="M:System.EnumExtensions.ParseEnum``1(System.Enum,``0)">
+            <summary>
+            将枚举值转换成枚举类型
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="value"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.EnumExtensions.ParseEnumByName``1(System.Enum,``0)">
+            <summary>
+            将枚举值转换成枚举类型
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="value"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.EnumExtensions.ParseEnum``1(System.String,``0)">
+            <summary>
+            将枚举值转换成枚举类型
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <param name="value"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
